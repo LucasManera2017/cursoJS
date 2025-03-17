@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+   <!-- Documento object Model DOM -->
+  <button>hello</button>
+  <button class="js-button">Second button</button>
+
+  <script>
+    //built-in-object DOM
+    //innerHTML change all the HTML page
+    
+    //Let us get any element and put it into JS
+    console.log(document.querySelector('button').innerHTML);
+    document.querySelector('button')
+      .innerHTML = 'Changed';
+
+    const buttonElement = document.querySelector('.js-button');
+
+    console.log(buttonElement);      
+
+    /*
+    //Link to the title of the top of the page
+    console.log(document.title);
+    document.title = "Changed"
+
+
+    //Get all the body of the document into JS
+    console.log(document.body);
+    console.log(typeof document.body);
+
+    //controls all the HTML inside the body
+    console.log(document.body.innerHTML);
+    document.body.innerHTML = '<button>Good job!</button>';
+    */
+
+
+    /*
+    document.body.innerHTML = 'hello';
+
+    document.title = 'Good job!';
+    */
+    
+  </script>
+</body>
+</html>
