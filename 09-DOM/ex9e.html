@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex9e</title>
+</head>
+<body>
+  <input type="text" name="" onkeydown="handleCostKeyDown(event)">
+  <button type="submit" onclick="
+    textValue();
+  ">Submit</button>
+
+  <p></p>
+
+  <script>
+    function handleCostKeyDown(event) {
+      if (event.key === 'Enter') {
+        textValue();
+      }
+    }
+   
+    function textValue() {
+      const getValue = document.querySelector('input').value;
+
+      document.querySelector('p').innerHTML = `Your name is: ${getValue}`;
+    }
+  </script>
+</body>
+</html>
