@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8"></head>
+  <body>
+    <!-- Code changes are at the bottom. -->
+
+    <p class="js-result"></p>
+
+    <p>
+      <button onclick="
+        updateCalculation('1');
+        displayCalculator();
+      ">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+        displayCalculator();
+      ">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+        displayCalculator();
+      ">3</button>
+
+      <button onclick="
+        updateCalculation(' + ');
+        displayCalculator();
+      ">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('4');
+        displayCalculator();
+      ">4</button>
+
+      <button onclick="
+        updateCalculation('5');
+        displayCalculator();
+      ">5</button>
+
+      <button onclick="
+        updateCalculation('6');
+        displayCalculator();
+      ">6</button>
+
+      <button onclick="
+        updateCalculation(' - ');
+        displayCalculator();
+      ">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('7');
+        displayCalculator();
+      ">7</button>
+
+      <button onclick="
+        updateCalculation('8');
+        displayCalculator();
+      ">8</button>
+
+      <button onclick="
+        updateCalculation('9');
+        displayCalculator();
+      ">9</button>
+
+      <button onclick="
+        updateCalculation(' * ');
+        displayCalculator();
+      ">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('0');
+        displayCalculator();
+      ">0</button>
+
+      <button onclick="
+        updateCalculation('.');
+        displayCalculator();
+      ">.</button>
+
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        console.log(calculation);
+
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+        displayCalculator();
+      ">=</button>
+
+      <button onclick="
+        updateCalculation(' / ');
+        displayCalculator();
+      ">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation = '';
+        console.log(calculation);
+
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+        displayCalculator();
+      ">Clear</button>
+    </p>
+
+    <script>
+      let calculation = localStorage.getItem('calculation') || '';
+
+      function updateCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+        localStorage.setItem('calculation', calculation);
+      }
+
+      // Optional: you can also create a function in order
+      // to reuse this code.
+      function saveCalculation() {
+        localStorage.setItem('calculation', calculation);
+      }
+
+      function displayCalculator() {
+        document.querySelector('.js-result').innerHTML = calculation;
+      }
+    </script>
+  </body>
+</html>
